@@ -24,7 +24,7 @@
       ```
     </details>
     <details>
-      <summary>Playwrith</summary>
+      <summary>Playwrite</summary>
 
       ```
       long console output here
