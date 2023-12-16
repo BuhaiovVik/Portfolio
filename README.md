@@ -1,8 +1,8 @@
 # Gucci
 **<details><summary>1. Documentation</summary>**
--Test Plan
--Test Cases
--Traceability Matrix
+- Test Plan
+- Test Cases
+- Traceability Matrix
 </details>
 
 **<details><summary>2. Front-End testing</summary>**
