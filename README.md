@@ -1,7 +1,14 @@
-# Portfolio
+# Gucci
 1. Documentation
     <details>
-      <summary>Example</summary>
+      <summary>Test Plan</summary>
+
+      ```
+      long console output here
+      ```
+    </details>
+    <details>
+      <summary>Test Cases</summary>
 
       ```
       long console output here
@@ -10,7 +17,14 @@
 
 2. Front-End testing
     <details>
-      <summary>Example</summary>
+      <summary>Selenium WebDriver</summary>
+
+      ```
+      long console output here
+      ```
+    </details>
+    <details>
+      <summary>Playwrith</summary>
 
       ```
       long console output here
@@ -19,7 +33,7 @@
 
 3. API testing
     <details>
-      <summary>Example</summary>
+      <summary>Postman</summary>
 
       ```
       long console output here
