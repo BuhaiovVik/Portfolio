@@ -7,7 +7,7 @@
 
 **<details><summary>2. Front-End testing</summary>**
 
-<details><1>Selenium WebDriver</summary>
+<1><summary>Selenium WebDriver</summary>
 
 - 
 </details>
