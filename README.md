@@ -5,7 +5,7 @@
 -Traceability Matrix
 </details>
 
-<details><summary>2. Front-End testing</summary>
+**<details><summary>2. Front-End testing</summary>**
 
 <details><summary>Selenium WebDriver</summary>
 spoiler content
@@ -17,6 +17,6 @@ spoiler content
 
 </details>
 
-<details><summary>3. API testing</summary>
+**<details><summary>3. API testing</summary>**
 Postman API
 </details>
