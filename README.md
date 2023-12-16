@@ -1,9 +1,9 @@
 # Gucci
 <details>
       <summary>1. Documentation</summary>
-      Test Plan\
+      Test Plan
       
-      Test Cases\
+      Test Cases
       
       Traceability Matrix
       
