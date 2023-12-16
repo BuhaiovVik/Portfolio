@@ -1,4 +1,4 @@
-# Gucci <img src="https://github.com/BuhaiovVik/Portfolio/assets/149452982/cade4ebe-06f1-4fa5-90af-937ed0134be2" title="Gucci" alt="Gucci" width="37" height="21"/>&nbsp;
+# Gucci [<img src="https://github.com/BuhaiovVik/Portfolio/assets/149452982/cade4ebe-06f1-4fa5-90af-937ed0134be2" title="Gucci" alt="Gucci" width="37" height="21"/>&nbsp;](https://www.gucci.com/us/en)
 
 **<details><summary>1. Documentation</summary>**
 - [Test Plan](http://squarespace.com/ "Title")
