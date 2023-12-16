@@ -1,9 +1,9 @@
 # Gucci   <img src="https://github.com/BuhaiovVik/Portfolio/assets/149452982/cade4ebe-06f1-4fa5-90af-937ed0134be2" title="Gucci" alt="Gucci" width="37" height="21"/>&nbsp;
 
 **<details><summary>1. Documentation</summary>**
-- Test Plan
-- Test Cases
-- Traceability Matrix
+- [Test Plan](http://squarespace.com/ "Title")
+- [Test Cases](http://squarespace.com/ "Title")
+- [Traceability Matrix](http://squarespace.com/ "Title")
 </details>
 
 **<details><summary>2. Front-End testing</summary>**
@@ -11,31 +11,31 @@
 <details><summary>Selenium WebDriver</summary>
  
 * Local Script
-  * Unitest
-  * Pytest
+  * [Unitest](http://squarespace.com/ "Title")
+  * [Pytest](http://squarespace.com/ "Title")
 * Cloud Script (Browser Stack)
-  * Serial 
-  * Paralel
+  * [Serial](http://squarespace.com/ "Title")
+  * [Paralel](http://squarespace.com/ "Title")
 * Reports
-  * HTML
-  * Allure
+  * [HTML](http://squarespace.com/ "Title")
+  * [Allure](http://squarespace.com/ "Title")
 </details>
 
 <details><summary>Playwrite</summary>
  
 * Local Script
-  * Pytest
+  * [Pytest](http://squarespace.com/ "Title")
 * Cloud Script (Browser Stack)
-  * Serial
-  * Paralel
+  * [Serial](http://squarespace.com/ "Title")
+  * [Paralel](http://squarespace.com/ "Title")
 * Reports
-  * HTML
+  * [HTML](http://squarespace.com/ "Title")
 </details>
 
 </details>
 
 **<details><summary>3. API testing</summary>**
 * Postman API
-  * Tests
-  * Environment
+  * [Tests](http://squarespace.com/ "Title")
+  * [Environment](http://squarespace.com/ "Title")
 </details>
