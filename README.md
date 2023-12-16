@@ -7,12 +7,12 @@
 
 **<details><summary>2. Front-End testing</summary>**
 
-_<details><summary>Selenium WebDriver</summary>_
+<details><1>Selenium WebDriver</summary>
 
 - 
 </details>
 
-_<details><summary>Playwrite</summary>_
+<details><summary>Playwrite</summary>
 spoiler content
 </details>
 
