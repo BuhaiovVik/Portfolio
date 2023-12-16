@@ -8,12 +8,25 @@
 **<details><summary>2. Front-End testing</summary>**
 
  <details><summary>Selenium WebDriver</summary>
-
-- 
+* Local Script
+  * Unitest
+  * Pytest
+* Cloud Script (Browser Stack)
+  * Serial 
+  * Paralel
+* Reports
+  * HTML
+  * Allure
 </details>
 
  <details><summary>Playwrite</summary>
-spoiler content
+* Local Script
+  * Pytest
+* Cloud Script (Browser Stack)
+  * Serial
+  * Paralel
+* Reports
+  * HTML
 </details>
 
 </details>
