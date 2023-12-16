@@ -6,9 +6,17 @@
 </details>
 
 <details><summary>2. Front-End testing</summary>
+  
+<details><summary>Selenium WebDriver</summary>
 spoiler content
 </details>
 
-## <details><summary>3. API testing</summary>
-  Postman API
-  </details>
+<details><summary>Playwrite</summary>
+spoiler content
+</details>
+
+</details>
+
+<details><summary>3. API testing</summary>
+Postman API
+</details>
