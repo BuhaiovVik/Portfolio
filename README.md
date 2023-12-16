@@ -1,13 +1,13 @@
 # Gucci
      <details>
-##      <summary>1. Documentation</summary>
+      <summary>1. Documentation</summary>
 
       ```
       long console output here
       ```
     </details>
     <details>
-##      <summary>2. Front-End testing</summary>
+      <summary>2. Front-End testing</summary>
 
       ```
       <details>
@@ -29,7 +29,7 @@
       ```
     </details>
     <details>
-##    <summary>3. API testing</summary>
+    <summary>3. API testing</summary>
 
       ```
       long console output here
