@@ -39,3 +39,9 @@
   * [Tests](http://squarespace.com/ "Title")
   * [Environment](http://squarespace.com/ "Title")
 </details>
+
+**<details><summary>4. Performance testing</summary>**
+* [Speedlab](http://squarespace.com/ "Title")
+* [LightHouse](http://squarespace.com/ "Title")
+* [Mozzila Abservatory](http://squarespace.com/ "Title")
+</details>
