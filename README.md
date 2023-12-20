@@ -1,7 +1,7 @@
 # Gucci [<img src="https://github.com/BuhaiovVik/Portfolio/assets/149452982/cade4ebe-06f1-4fa5-90af-937ed0134be2" title="All will be GUCCI" alt="Gucci" width="37" height="21"/>&nbsp;](https://www.gucci.com/us/en)
 
 **<details><summary>1. Documentation</summary>**
-- [Test Plan](http://squarespace.com/ "Title")
+- [Test Plan](https://docs.google.com/document/d/1_CLLSDJFKqH7PP0YDY6GgnjItyYZ54Oepxrb0qxJ8pY/edit?usp=sharing "Test Plan")
 - [Test Cases](http://squarespace.com/ "Title")
 - [Traceability Matrix](http://squarespace.com/ "Title")
 </details>
