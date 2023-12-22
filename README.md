@@ -2,7 +2,7 @@
 
 **<details><summary>1. Documentation</summary>**
 - [Test Plan](https://docs.google.com/document/d/1_CLLSDJFKqH7PP0YDY6GgnjItyYZ54Oepxrb0qxJ8pY/edit?usp=sharing "Test Plan")
-- [Test Cases](http://squarespace.com/ "Title")
+- [Test Cases](https://docs.google.com/spreadsheets/d/16b9btNk01aWq6yv_lWyQYoqtF0yCuKCtQ5xesKil77o/edit?usp=sharing "Test Cases")
 - [Traceability Matrix](http://squarespace.com/ "Title")
 </details>
 
