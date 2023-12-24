@@ -21,7 +21,7 @@
   * [Allure](http://squarespace.com/ "Title")
 </details>
 
-*<details><summary>Playwrite</summary>*
+*<details><summary>Playwright</summary>*
  
 * Local Script
   * [Pytest](http://squarespace.com/ "Title")
