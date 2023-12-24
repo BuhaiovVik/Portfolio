@@ -1,12 +1,12 @@
 # Gucci [<img src="https://github.com/BuhaiovVik/Portfolio/assets/149452982/cade4ebe-06f1-4fa5-90af-937ed0134be2" title="All will be GUCCI" alt="Gucci" width="37" height="21"/>&nbsp;](https://www.gucci.com/us/en)
 
-**<details><summary>1. Documentation</summary>**
+**<details><summary>1️⃣ Documentation</summary>**
 - [Test Plan](https://docs.google.com/document/d/1_CLLSDJFKqH7PP0YDY6GgnjItyYZ54Oepxrb0qxJ8pY/edit?usp=sharing "Test Plan")
 - [Test Cases](https://docs.google.com/spreadsheets/d/16b9btNk01aWq6yv_lWyQYoqtF0yCuKCtQ5xesKil77o/edit?usp=sharing "Test Cases")
 - [Traceability Matrix](http://squarespace.com/ "Title")
 </details>
 
-**<details><summary>2. Front-End testing</summary>**
+**<details><summary>2️⃣ Front-End testing</summary>**
 
 *<details><summary>Selenium WebDriver</summary>*
  
@@ -34,17 +34,22 @@
 
 </details>
 
-**<details><summary>3. API testing</summary>**
+**<details><summary>3️⃣ API testing</summary>**
 * Postman API
   * [Tests](http://squarespace.com/ "Title")
   * [Environment](http://squarespace.com/ "Title")
 </details>
 
-**<details><summary>4. Performance testing</summary>**
+**<details><summary>4️⃣ Performance testing</summary>**
 * [Speedlab](http://squarespace.com/ "Title")
 * [LightHouse](http://squarespace.com/ "Title")
 * [Mozzila Abservatory](http://squarespace.com/ "Title")
 </details>
 
+**<details><summary>5️⃣ Security testing</summary>**
+* [Speedlab](http://squarespace.com/ "Title")
+* [LightHouse](http://squarespace.com/ "Title")
+* [Mozzila Abservatory](http://squarespace.com/ "Title")
+</details>
 
 
