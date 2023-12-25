@@ -9,3 +9,7 @@
 - open [GTmetrix](https://gtmetrix.com/reports/www.gucci.com/wSECrUN7/ "GTmetrix link");
 - open [GTmetrix_www.gucci.com.pdf](https://github.com/BuhaiovVik/Portfolio/blob/main/4.%20Perfomance%20testing/GTmetrix_www.gucci.com.pdf "GTmetrix pdf").
 </details>
+
+**<details><summary>BrowserStack Speedlab</summary>**
+- open [BrowserStack Speedlab](https://www.browserstack.com/speedlab/new-report/6d5b565aff5b604b7af667cc26734dd6c3cd1a99 "Speedlab link").
+</details>
