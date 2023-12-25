@@ -42,7 +42,7 @@
 
 **<details><summary>4️⃣ Performance testing</summary>**
 * [LightHouse](https://googlechrome.github.io/lighthouse/viewer/?gist=672fbeecbc8f6edc276de6e8eb4e4bbf "LightHouse report")
-* [Speedlab](http://squarespace.com/ "Title")
+* [GTmetrix](https://gtmetrix.com/reports/www.gucci.com/wSECrUN7/ "GTmetrix report")
 * [Mozzila Abservatory](http://squarespace.com/ "Title")
 </details>
 
