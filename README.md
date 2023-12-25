@@ -43,13 +43,12 @@
 **<details><summary>4️⃣ Performance testing</summary>**
 * [LightHouse](https://googlechrome.github.io/lighthouse/viewer/?gist=672fbeecbc8f6edc276de6e8eb4e4bbf "LightHouse report")
 * [GTmetrix](https://gtmetrix.com/reports/www.gucci.com/wSECrUN7/ "GTmetrix report")
-* [Mozzila Abservatory](http://squarespace.com/ "Title")
+* [BrowserStack Speedlab](https://www.gucci.com/us/en/ "Speedlab report")
 </details>
 
 **<details><summary>5️⃣ Security testing</summary>**
-* [Speedlab](http://squarespace.com/ "Title")
-* [LightHouse](http://squarespace.com/ "Title")
-* [Mozzila Abservatory](http://squarespace.com/ "Title")
+* [Mozzila Abservatory](https://observatory.mozilla.org/analyze/www.gucci.com "Mozzila Abservatory report")
+* [SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=www.gucci.com&hideResults=on "SSL Labs report")
 </details>
 
 
