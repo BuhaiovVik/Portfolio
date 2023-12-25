@@ -42,7 +42,7 @@
 
 **<details><summary>4️⃣ Performance testing</summary>**
 * [Speedlab](http://squarespace.com/ "Title")
-* [LightHouse](http://squarespace.com/ "Title")
+* [LightHouse](https://googlechrome.github.io/lighthouse/viewer/?gist=672fbeecbc8f6edc276de6e8eb4e4bbf "LightHouse report")
 * [Mozzila Abservatory](http://squarespace.com/ "Title")
 </details>
 
