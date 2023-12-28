@@ -1,4 +1,4 @@
-# [<img src="https://github.com/BuhaiovVik/BuhaiovVik/blob/main/icons/prada-1.svg" title="Prada" alt="Prada" width="200" height="200"/>&nbsp;](https://www.prada.com/)
+# [<img src="https://github.com/BuhaiovVik/BuhaiovVik/blob/main/icons/PRADA111.png" width="205" height="38"/>&nbsp;](https://www.prada.com/)
 
 **<details><summary>1️⃣ Documentation</summary>**
 - [Test Plan](https://docs.google.com/document/d/1_CLLSDJFKqH7PP0YDY6GgnjItyYZ54Oepxrb0qxJ8pY/edit?usp=sharing "Test Plan")
