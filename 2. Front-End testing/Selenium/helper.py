@@ -1,59 +1,290 @@
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.common.exceptions import WebDriverException as WDE
-import time
 from faker import Faker
 import random
+from functools import reduce
+from itertools import takewhile
 
 fake = Faker()
 
-# Elements locators
-url = "https://www.gucci.com/us/en/"
-pop_up1 = "//button[@id='onetrust-accept-btn-handler']"
-pop_up2 = "//body/div[@id='bx-campaign-1927696']/div[3]/div[1]/div[1]/div[1]/a[1]/*[1]"
-m_title = "GUCCI® US Official Site | Redefining Luxury Fashion"
-s_title = "My Account | Gucci"
-h_menu = "//g-icon-menu[@variant='24']"
-my_acc = "//g-icon-myaccount[@variant='24']"
-sign_in = "//a[contains(@data-testid,'sign-in')]"
+check_box = ("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/section[1]/div[5]/div[1]/div[1]/div["
+             "1]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/input[1]")
+address_1 = ("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/section[1]/div[5]/div[1]/div[1]/div["
+             "1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/input[1]")
+mail_scroll = "//body/div[@id='__next']/section[1]/div[1]/div[3]/div[1]/div[1]/div[1]"
+drop_down = """//select[@id='gigya-dropdown-43592239753641940']/option[text()="I'd rather not say"]"""
+mail_confirm = "//p[contains(text(),'Prada - Your new account confirmation')]"
+log_icon = "//span[@class='utils__icon pr-icon-new-logout']"
+address_dd = "//a[@href='/us/en/logged-area.html?section=personal-information']"
+address_title = "Logged Area | PRADA"
+confirm = ("//body/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/section[1]/div[5]/div[1]/div[1]/div[1]/div["
+           "3]/button[1]")
+ship_address = "(//p[@class='card-address'])[1]"
+bill_address = "(//p[@class='card-address'])[2]"
+confirm_2 = "(//button[@type='button'][contains(.,'Confirm')])[7]"
 
 # Random data
-month = random.randint(1, 12)
-day = random.randint(1, 30)
-year = random.randint(1950, 2005)
+phone = random.randint(2000000000, 5555555555)
+date = fake.date()
+mm_dd = date[5:7] + date[8:10]
 f_name = fake.first_name()
 l_name = fake.last_name()
-email = fake.email()
 password = "p@sSword" + str(random.randint(0, 9999999))
-welcome = "//span[contains(@class,'hero-account-landing-first-name')]"
-
-
-# Account creating
-def account(driver):
-    wait = WebDriverWait(driver, 10)
-    wait.until(EC.visibility_of_element_located((By.XPATH, "//h1[contains(text(),'MY GUCCI Account')]")))
-    driver.find_element(By.ID, "email-input").send_keys('\n', "vasiliy_1200@ebanina.com")
-    driver.find_element(By.ID, "confirm-button").click()
-    time.sleep(1)
-    wait.until(
-        EC.visibility_of_element_located((By.XPATH, "//div[contains(text(),'Please enter at least 8 characters')]")))
-    driver.find_element(By.ID, "password-input").send_keys('\n', password)
-    driver.find_element(By.ID, "first-name-input").send_keys('\n', f_name)
-    time.sleep(3)
-    driver.find_element(By.ID, "last-name-input").send_keys('\n', l_name)
-    driver.find_element(By.ID, "month-input").send_keys('\n', month)
-    driver.find_element(By.ID, "day-input").send_keys('\n', day)
-    driver.find_element(By.ID, "year-input").send_keys('\n', year)
-    driver.find_element(By.ID, "title-select").click()
-    time.sleep(1)
-    driver.find_element(By.XPATH, "//li[contains(.,'I’d rather not say')]").click()
-    time.sleep(1)
-    wait.until(EC.element_to_be_clickable((By.ID, "confirm-button")))
-    try:
-        driver.find_element(By.ID, "confirm-button").click()
-    except WDE:
-        driver.find_element(By.ID, "confirm-button").click()
-    time.sleep(2)
+addresses = [
+    "250 Rt 59, Airmont NY 10901",
+    "141 Washington Ave Extension, Albany NY 12205",
+    "13858 Rt 31 W, Albion NY 14411",
+    "2055 Niagara Falls Blvd, Amherst NY 14228",
+    "101 Sanford Farm Shpg Center, Amsterdam NY 12010",
+    "297 Grant Avenue, Auburn NY 13021",
+    "4133 Veterans Memorial Drive, Batavia NY 14020",
+    "6265 Brockport Spencerport Rd, Brockport NY 14420",
+    "5399 W Genesse St, Camillus NY 13031",
+    "3191 County rd 10, Canandaigua NY 14424",
+    "30 Catskill, Catskill NY 12414",
+    "161 Centereach Mall, Centereach NY 11720",
+    "3018 East Ave, Central Square NY 13036",
+    "100 Thruway Plaza, Cheektowaga NY 14225",
+    "8064 Brewerton Rd, Cicero NY 13039",
+    "5033 Transit Road, Clarence NY 14031",
+    "3949 Route 31, Clay NY 13041",
+    "139 Merchant Place, Cobleskill NY 12043",
+    "85 Crooked Hill Road, Commack NY 11725",
+    "872 Route 13, Cortlandville NY 13045",
+    "279 Troy Road, East Greenbush NY 12061",
+    "2465 Hempstead Turnpike, East Meadow NY 11554",
+    "6438 Basile Rowe, East Syracuse NY 13057",
+    "25737 US Rt 11, Evans Mills NY 13637",
+    "901 Route 110, Farmingdale NY 11735",
+    "2400 Route 9, Fishkill NY 12524",
+    "10401 Bennett Road, Fredonia NY 14063",
+    "1818 State Route 3, Fulton NY 13069",
+    "4300 Lakeville Road, Geneseo NY 14454",
+    "990 Route 5 20, Geneva NY 14456",
+    "311 RT 9W, Glenmont NY 12077",
+    "200 Dutch Meadows Ln, Glenville NY 12302",
+    "100 Elm Ridge Center Dr, Greece NY 14626",
+    "1549 Rt 9, Halfmoon NY 12065",
+    "5360 Southwestern Blvd, Hamburg NY 14075",
+    "103 North Caroline St, Herkimer NY 13350",
+    "1000 State Route 36, Hornell NY 14843",
+    "1400 County Rd 64, Horseheads NY 14845",
+    "135 Fairgrounds Memorial Pkwy, Ithaca NY 14850",
+    "2 Gannett Dr, Johnson City NY 13790",
+    "233 5th Ave Ext, Johnstown NY 12095",
+    "601 Frank Stottile Blvd, Kingston NY 12401",
+    "350 E Fairmount Ave, Lakewood NY 14750",
+    "4975 Transit Rd, Lancaster NY 14086",
+    "579 Troy-Schenectady Road, Latham NY 12110",
+    "5783 So Transit Road, Lockport NY 14094",
+    "7155 State Rt 12 S, Lowville NY 13367",
+    "425 Route 31, Macedon NY 14502",
+    "3222 State Rt 11, Malone NY 12953",
+    "200 Sunrise Mall, Massapequa NY 11758",
+    "43 Stephenville St, Massena NY 13662",
+    "750 Middle Country Road, Middle Island NY 11953",
+    "470 Route 211 East, Middletown NY 10940",
+    "3133 E Main St, Mohegan Lake NY 10547",
+    "288 Larkin, Monroe NY 10950",
+    "41 Anawana Lake Road, Monticello NY 12701",
+    "4765 Commercial Drive, New Hartford NY 13413",
+    "1201 Rt 300, Newburgh NY 12550",
+    "515 Sawmill Road, West Haven CT 6516",
+    "2473 Hackworth Road, Adamsville AL 35005",
+    "630 Coonial Promenade Pkwy, Alabaster AL 35007",
+    "2643 Hwy 280 West, Alexander City AL 35010",
+    "540 West Bypass, Andalusia AL 36420",
+    "5560 Mcclellan Blvd, Anniston AL 36206",
+    "1450 No Brindlee Mtn Pkwy, Arab AL 35016",
+    "1011 US Hwy 72 East, Athens AL 35611",
+    "973 Gilbert Ferry Road Se, Attalla AL 35954",
+    "1717 South College Street, Auburn AL 36830",
+    "701 Mcmeans Ave, Bay Minette AL 36507",
+    "750 Academy Drive, Bessemer AL 35022",
+    "312 Palisades Blvd, Birmingham AL 35209",
+    "1600 Montclair Rd, Birmingham AL 35210",
+    "5919 Trussville Crossings Pkwy, Birmingham AL 35235",
+    "9248 Parkway East, Birmingham AL 35206",
+    "1972 Hwy 431, Boaz AL 35957",
+    "10675 Hwy 5, Brent AL 35034",
+    "2041 Douglas Avenue, Brewton AL 36426",
+    "5100 Hwy 31, Calera AL 35040",
+    "1916 Center Point Rd, Center Point AL 35215",
+    "1950 W Main St, Centre AL 35960",
+    "16077 Highway 280, Chelsea AL 35043",
+    "1415 7Th Street South, Clanton AL 35045",
+    "626 Olive Street Sw, Cullman AL 35055",
+    "27520 Hwy 98, Daphne AL 36526",
+    "2800 Spring Avn SW, Decatur AL 35603",
+    "969 Us Hwy 80 West, Demopolis AL 36732",
+    "3300 South Oates Street, Dothan AL 36301",
+    "4310 Montgomery Hwy, Dothan AL 36303",
+    "600 Boll Weevil Circle, Enterprise AL 36330",
+    "3176 South Eufaula Avenue, Eufaula AL 36027",
+    "7100 Aaron Aronov Drive, Fairfield AL 35064",
+    "10040 County Road 48, Fairhope AL 36533",
+    "3186 Hwy 171 North, Fayette AL 35555",
+    "3100 Hough Rd, Florence AL 35630",
+    "2200 South Mckenzie St, Foley AL 36535",
+    "2001 Glenn Bldv Sw, Fort Payne AL 35968",
+    "340 East Meighan Blvd, Gadsden AL 35903",
+    "890 Odum Road, Gardendale AL 35071",
+    "1608 W Magnolia Ave, Geneva AL 36340",
+    "501 Willow Lane, Greenville AL 36037",
+    "170 Fort Morgan Road, Gulf Shores AL 36542",
+    "11697 US Hwy 431, Guntersville AL 35976",
+    "42417 Hwy 195, Haleyville AL 35565",
+    "1706 Military Street South, Hamilton AL 35570",
+    "1201 Hwy 31 NW, Hartselle AL 35640",
+    "209 Lakeshore Parkway, Homewood AL 35209",
+    "2780 John Hawkins Pkwy, Hoover AL 35244",
+    "5335 Hwy 280 South, Hoover AL 35242",
+    "1007 Red Farmer Drive, Hueytown AL 35023",
+    "2900 S Mem PkwyDrake Ave, Huntsville AL 35801",
+    "11610 Memorial Pkwy South, Huntsville AL 35803",
+    "2200 Sparkman Drive, Huntsville AL 35810",
+    "330 Sutton Rd, Huntsville AL 35763",
+    "6140A Univ Drive, Huntsville AL 35806",
+    "4206 N College Ave, Jackson AL 36545",
+    "1625 Pelham South, Jacksonville AL 36265",
+    "1801 Hwy 78 East, Jasper AL 35501",
+    "8551 Whitfield Ave, Leeds AL 35094",
+    "8650 Madison Blvd, Madison AL 35758",
+    "145 Kelley Blvd, Millbrook AL 36054",
+    "1970 S University Blvd, Mobile AL 36609",
+    "6350 Cottage Hill Road, Mobile AL 36609",
+    "101 South Beltline Highway, Mobile AL 36606",
+    "2500 Dawes Road, Mobile AL 36695",
+    "5245 Rangeline Service Rd, Mobile AL 36619",
+    "685 Schillinger Rd, Mobile AL 36695",
+    "3371 S Alabama Ave, Monroeville AL 36460",
+    "10710 Chantilly Pkwy, Montgomery AL 36117",
+    "3801 Eastern Blvd, Montgomery AL 36116",
+    "6495 Atlanta Hwy, Montgomery AL 36117",
+    "851 Ann St, Montgomery AL 36107",
+    "15445 Highway 24, Moulton AL 35650",
+    "517 West Avalon Ave, Muscle Shoals AL 35661",
+    "5710 Mcfarland Blvd, Northport AL 35476",
+    "2453 2Nd Avenue East, Oneonta AL 35121",
+    "2900 Pepperrell Pkwy, Opelika AL 36801",
+    "92 Plaza Lane, Oxford AL 36203",
+    "1537 Hwy 231 South, Ozark AL 36360",
+    "2181 Pelham Pkwy, Pelham AL 35124",
+    "165 Vaughan Ln, Pell City AL 35125",
+    "3700 Hwy 280-431 N, Phenix City AL 36867",
+    "1903 Cobbs Ford Rd, Prattville AL 36066",
+    "4180 Us Hwy 431, Roanoke AL 36274",
+    "13675 Hwy 43, Russellville AL 35653",
+    "1095 Industrial Pkwy, Saraland AL 36571",
+    "24833 Johnt Reidprkw, Scottsboro AL 35768",
+    "1501 Hwy 14 East, Selma AL 36703",
+    "7855 Moffett Rd, Semmes AL 36575",
+    "150 Springville Station Blvd, Springville AL 35146",
+    "690 Hwy 78, Sumiton AL 35148",
+    "41301 US Hwy 280, Sylacauga AL 35150",
+    "214 Haynes Street, Talladega AL 35160",
+    "1300 Gilmer Ave, Tallassee AL 36078",
+    "34301 Hwy 43, Thomasville AL 36784",
+    "1420 Us 231 South, Troy AL 36081",
+    "1501 Skyland Blvd E, Tuscaloosa AL 35405",
+    "3501 20th Av, Valley AL 36854",
+    "1300 Montgomery Highway, Vestavia Hills AL 35216",
+    "4538 Us Hwy 231, Wetumpka AL 36092",
+    "2575 Us Hwy 43, Winfield AL 35594",
+    "2 CALLEJON PALITO, PONCE PR 00716",
+    "2 COND PARQ DE BONNEVILLE, CAGUAS PR 00727",
+    "HC 2 BOX 4724, VILLALBA PR 00766",
+    "B17 CALLE 4, YABUCOA PR 00767",
+    "COMERIO ELDERLY APTS, COMERIO PR 00782",
+    "RR 9 BOX 1578, SAN JUAN PR 00926",
+    "55 UNIT 3020, DPO AA 34036",
+    "PO BOX 22990, SAN JUAN PR 00931",
+    "204 AVE LAGUNA, CAROLINA PR 00979",
+    "3734 DELMAS TER, LOS ANGELES CA 90034",
+    "860 VIA DE LA PAZ, PACIFIC PALISADES CA 90272",
+    "2601 GARNET AVE, SAN DIEGO CA 92109",
+    "809 LAUREL ST, SAN CARLOS CA 94070",
+    "75 BUENA VISTA AVE, SAN FRANCISCO CA 94117",
+    "429 N GRANT ST, STOCKTON CA 95202",
+    "21581 PHOENIX LAKE RD, SONORA CA 95370",
+    "1401 JEFFREY LN, PLACERVILLE CA 95667",
+    "4327 PALM AVE, SACRAMENTO CA 95842",
+    "552 S CANAL ST, HOLYOKE MA 01040",
+    "2 CRESCENT RD, LONGMEADOW MA 01106",
+    "1 BEACON CIR, SPRINGFIELD MA 01119",
+    "34 RIVER RD, SUNDERLAND MA 01375",
+    "700 PEARL ST, FITCHBURG MA 01420",
+    "16A MAYBERRY DR, WESTBOROUGH MA 01581",
+    "1 DALTON AVE, HAVERHILL MA 01835",
+    "102 GAINSBOROUGH ST, BOSTON MA 02115",
+    "913 MASSACHUSETTS AVE, BOSTON MA 02118",
+    "801 BEECH ST, GIBSONIA PA 15044",
+    "6301 BEIGHLEY RD, NEW KENSINGTON PA 15068",
+    "701 BROWNSVILLE RD, PITTSBURGH PA 15210",
+    "2 BROADWAY ST, MEYERSDALE PA 15552",
+    "301 MCDOWELL RD, LIGONIER PA 15658",
+    "400 MARWOOD RD, CABOT PA 16023",
+    "2000 N HERMITAGE RD, HERMITAGE PA 16148",
+    "11320 SAYBROOK RD, MEADVILLE PA 16335",
+    "1301 S 10TH ST, ALTOONA PA 16602"
+]
+company = fake.company()
+address = addresses[random.randint(0, 194)]
+zip_code = address[-5:]
+add_a = reduce(lambda acc, x: acc + x, takewhile(lambda x: x != ",", address), "")
+add = str(add_a)
+city = address[len(add): -10]
+state = address[-8: -6]
+us_abb = {
+    'AL': "(//li[contains(., 'Alabama')])[3]",
+    'AK': "(//li[contains(., 'Alaska')])[3]",
+    'AZ': "(//li[contains(., 'Arizona')])[3]",
+    'AR': "(//li[contains(., 'Arkansas')])[3]",
+    'CA': "(//li[contains(., 'California')])[3]",
+    'CO': "(//li[contains(., 'Colorado')])[3]",
+    'CT': "(//li[contains(., 'Connecticut')])[3]",
+    'DE': "(//li[contains(., 'Delaware')])[3]",
+    'FL': "(//li[contains(., 'Florida')])[3]",
+    'GA': "(//li[contains(., 'Georgia')])[3]",
+    'HI': "(//li[contains(., 'Hawaii')])[3]",
+    'ID': "(//li[contains(., 'Idaho')])[3]",
+    'IL': "(//li[contains(., 'Illinois')])[3]",
+    'IN': "(//li[contains(., 'Indiana')])[3]",
+    'IA': "(//li[contains(., 'Iowa')])[3]",
+    'KS': "(//li[contains(., 'Kansas')])[3]",
+    'KY': "(//li[contains(., 'Kentucky')])[3]",
+    'LA': "(//li[contains(., 'Louisiana')])[3]",
+    'ME': "(//li[contains(., 'Maine')])[3]",
+    'MD': "(//li[contains(., 'Maryland')])[3]",
+    'MA': "(//li[contains(., 'Massachusetts')])[3]",
+    'MI': "(//li[contains(., 'Michigan')])[3]",
+    'MN': "(//li[contains(., 'Minnesota')])[3]",
+    'MS': "(//li[contains(., 'Mississippi')])[3]",
+    'MO': "(//li[contains(., 'Missouri')])[3]",
+    'MT': "(//li[contains(., 'Montana')])[3]",
+    'NE': "(//li[contains(., 'Nebraska')])[3]",
+    'NV': "(//li[contains(., 'Nevada')])[3]",
+    'NH': "(//li[contains(., 'New Hampshire')])[3]",
+    'NJ': "(//li[contains(., 'New Jersey')])[3]",
+    'NM': "(//li[contains(., 'New Mexico')])[3]",
+    'NY': "(//li[contains(., 'New York')])[3]",
+    'NC': "(//li[contains(., 'North Carolina')])[3]",
+    'ND': "(//li[contains(., 'North Dakota')])[3]",
+    'OH': "(//li[contains(., 'Ohio')])[3]",
+    'OK': "(//li[contains(., 'Oklahoma')])[3]",
+    'OR': "(//li[contains(., 'Oregon')])[3]",
+    'PA': "(//li[contains(., 'Pennsylvania')])[3]",
+    'RI': "(//li[contains(., 'Rhode Island')])[3]",
+    'SC': "(//li[contains(., 'South Carolina')])[3]",
+    'SD': "(//li[contains(., 'South Dakota')])[3]",
+    'TN': "(//li[contains(., 'Tennessee')])[3]",
+    'TX': "(//li[contains(., 'Texas')])[3]",
+    'UT': "(//li[contains(., 'Utah')])[3]",
+    'VT': "(//li[contains(., 'Vermont')])[3]",
+    'VA': "(//li[contains(., 'Virginia')])[3]",
+    'WA': "(//li[contains(., 'Washington')])[3]",
+    'WV': "(//li[contains(., 'West Virginia')])[3]",
+    'WI': "(//li[contains(., 'Wisconsin')])[3]",
+    'WY': "(//li[contains(., 'Wyoming')])[3]",
+}
+state_city = us_abb.get(state)
+state_dd = ("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/section[1]/div[5]/div[1]/div[1]/div["
+            "1]/div[2]/div[1]/div[3]/div[9]/div[1]/div[1]/input[1]")
