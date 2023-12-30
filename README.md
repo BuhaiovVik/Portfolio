@@ -43,12 +43,12 @@
 **<details><summary>4️⃣ Performance testing</summary>**
 * [LightHouse](https://googlechrome.github.io/lighthouse/viewer/?gist=e517117951dc8b0b51add7a6b3865792 "LightHouse report")
 * [GTmetrix](https://gtmetrix.com/reports/www.prada.com/Gdn2Jnv1/ "GTmetrix report")
-* [BrowserStack Speedlab](https://www.browserstack.com/speedlab/new-report/6d5b565aff5b604b7af667cc26734dd6c3cd1a99 "Speedlab report")
+* [BrowserStack Speedlab](https://www.browserstack.com/speedlab/new-report/79d0264f687dd2cd0076284460a507c4af3e9601 "Speedlab report")
 </details>
 
 **<details><summary>5️⃣ Security testing</summary>**
-* [Mozzila Abservatory](https://observatory.mozilla.org/analyze/www.gucci.com "Mozzila Abservatory report")
-* [SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=www.gucci.com&hideResults=on "SSL Labs report")
+* [Mozzila Abservatory](https://observatory.mozilla.org/analyze/www.prada.com "Mozzila Abservatory report")
+* [SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=www.prada.com&hideResults=on "SSL Labs report")
 </details>
 
 
