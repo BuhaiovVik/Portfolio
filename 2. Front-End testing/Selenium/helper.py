@@ -5,10 +5,15 @@ from itertools import takewhile
 
 fake = Faker()
 
+# Locators
+cross = "//button[@aria-label='prnux_close_minicart']"
+check_out = "//button[contains(.,'Proceed to checkout')]"
 check_box = ("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/section[1]/div[5]/div[1]/div[1]/div["
              "1]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/input[1]")
 address_1 = ("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/section[1]/div[5]/div[1]/div[1]/div["
              "1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/input[1]")
+address_change = ("//body/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/section[1]/article[3]/div[1]/div[2]/div["
+                  "1]/div[2]/div[1]/div[2]/button[1]")
 mail_scroll = "//body/div[@id='__next']/section[1]/div[1]/div[3]/div[1]/div[1]/div[1]"
 drop_down = """//select[@id='gigya-dropdown-43592239753641940']/option[text()="I'd rather not say"]"""
 mail_confirm = "//p[contains(text(),'Prada - Your new account confirmation')]"
@@ -20,6 +25,38 @@ confirm = ("//body/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/section[1]/d
 ship_address = "(//p[@class='card-address'])[1]"
 bill_address = "(//p[@class='card-address'])[2]"
 confirm_2 = "(//button[@type='button'][contains(.,'Confirm')])[7]"
+state_dd = ("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/section[1]/div[5]/div[1]/div[1]/div["
+            "1]/div[2]/div[1]/div[3]/div[9]/div[1]/div[1]/input[1]")
+re_edition = ("//a[@href='https://www.prada.com/us/en/womens/essentials/prada-re-edition/c/10103US'][contains(.,"
+              "'Prada Re-Edition')]")
+bag_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0632"
+           "/1BH204_R064_F0632_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.600.600.jpg, "
+           "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0632/1BH204_R064_F0632_V_V9L_SLF"
+           ".jpg/_jcr_content/renditions/cq5dam.web.hebebed.1200.1200.jpg 2x, "
+           "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0632/1BH204_R064_F0632_V_V9L_SLF"
+           ".jpg/_jcr_content/renditions/cq5dam.web.hebebed.1800.1800.jpg 3x']")
+add_shop_bag = "(//div[contains(.,'Add to shopping bag')])[22]"
+bag_alabaster_button = "//*[@title='Alabaster']"
+bag_alabaster_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0WZT"
+                     "/1BH204_R064_F0WZT_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.600.600.jpg, "
+                     "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0WZT"
+                     "/1BH204_R064_F0WZT_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1200.1200.jpg 2x, "
+                     "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0WZT"
+                     "/1BH204_R064_F0WZT_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1800.1800.jpg 3x']")
+bag_white_button = "//*[@title='White']"
+bag_white_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0009"
+                 "/1BH204_R064_F0009_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.600.600.jpg, "
+                 "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0009"
+                 "/1BH204_R064_F0009_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1200.1200.jpg 2x, "
+                 "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0009"
+                 "/1BH204_R064_F0009_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1800.1800.jpg 3x']")
+bag_orange_button = "//*[@title='Orange']"
+bag_orange_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0049"
+                  "/1BH204_R064_F0049_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.600.600.jpg, "
+                  "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0049"
+                  "/1BH204_R064_F0049_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1200.1200.jpg 2x, "
+                  "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0049"
+                  "/1BH204_R064_F0049_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1800.1800.jpg 3x']")
 
 # Random data
 phone = random.randint(2000000000, 5555555555)
@@ -27,7 +64,10 @@ date = fake.date()
 mm_dd = date[5:7] + date[8:10]
 f_name = fake.first_name()
 l_name = fake.last_name()
-password = "p@sSword" + str(random.randint(0, 9999999))
+password = "p@sSword" + str(random.randint(0, 999))
+company = fake.company()
+
+# Addresses testing require real postal addresses, that why I can't use faker library and created this list
 addresses = [
     "250 Rt 59, Airmont NY 10901",
     "141 Washington Ave Extension, Albany NY 12205",
@@ -189,15 +229,6 @@ addresses = [
     "1300 Montgomery Highway, Vestavia Hills AL 35216",
     "4538 Us Hwy 231, Wetumpka AL 36092",
     "2575 Us Hwy 43, Winfield AL 35594",
-    "2 CALLEJON PALITO, PONCE PR 00716",
-    "2 COND PARQ DE BONNEVILLE, CAGUAS PR 00727",
-    "HC 2 BOX 4724, VILLALBA PR 00766",
-    "B17 CALLE 4, YABUCOA PR 00767",
-    "COMERIO ELDERLY APTS, COMERIO PR 00782",
-    "RR 9 BOX 1578, SAN JUAN PR 00926",
-    "55 UNIT 3020, DPO AA 34036",
-    "PO BOX 22990, SAN JUAN PR 00931",
-    "204 AVE LAGUNA, CAROLINA PR 00979",
     "3734 DELMAS TER, LOS ANGELES CA 90034",
     "860 VIA DE LA PAZ, PACIFIC PALISADES CA 90272",
     "2601 GARNET AVE, SAN DIEGO CA 92109",
@@ -226,13 +257,16 @@ addresses = [
     "11320 SAYBROOK RD, MEADVILLE PA 16335",
     "1301 S 10TH ST, ALTOONA PA 16602"
 ]
-company = fake.company()
-address = addresses[random.randint(0, 194)]
+
+# Random addresses dictionary based
+address = addresses[random.randint(0, 185)]
 zip_code = address[-5:]
 add_a = reduce(lambda acc, x: acc + x, takewhile(lambda x: x != ",", address), "")
 add = str(add_a)
-city = address[len(add): -10]
+city = address[len(add) + 2: -10]
 state = address[-8: -6]
+
+# Dictionary with XPATH locators for each state
 us_abb = {
     'AL': "(//li[contains(., 'Alabama')])[3]",
     'AK': "(//li[contains(., 'Alaska')])[3]",
@@ -285,6 +319,6 @@ us_abb = {
     'WI': "(//li[contains(., 'Wisconsin')])[3]",
     'WY': "(//li[contains(., 'Wyoming')])[3]",
 }
+
+# XPATH for current state
 state_city = us_abb.get(state)
-state_dd = ("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/section[1]/div[5]/div[1]/div[1]/div["
-            "1]/div[2]/div[1]/div[3]/div[9]/div[1]/div[1]/input[1]")
