@@ -19,6 +19,8 @@ from faker import Faker
 import random
 import pickle
 import helper as H
+from functools import reduce
+from itertools import takewhile
 
 fake = Faker()
 
@@ -77,10 +79,12 @@ class Chrome(unittest.TestCase):
         wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(@class,'utils__icon pr-icon-new-bag')]")))
         try:
             title_check = driver.title == "Prada Official Website | Thinking fashion since 1913 | PRADA"
-            print("Title is correct!")
+            print("Title is correct. Test PASS!")
         except WDE:
-            print("Incorrect title!")
+            print("Incorrect title. Test FALL!")
         print("Account was successful created")
+
+        # Test case fept_002
 
         # Opening the address form menu
         driver.find_element(By.XPATH, H.log_icon).click()
@@ -88,39 +92,133 @@ class Chrome(unittest.TestCase):
         wait.until(EC.visibility_of_element_located((By.XPATH, "//div[contains(text(),'Personal information')]")))
         try:
             title_check = driver.title == H.address_title
-            print("Title is correct!")
+            print("Title is correct. Test PASS!")
         except WDE:
-            print("Incorrect title!")
+            print("Incorrect title. Test FALL!")
         driver.find_element(By.XPATH, '//*[contains(text(),"Add new shipping address")]').click()
         wait.until(EC.visibility_of_element_located((By.XPATH, "//h3[contains(text(),'Shipping address')]")))
         driver.find_element(By.XPATH, "//input[contains(@id,'first_name_')]").send_keys(H.f_name)
         driver.find_element(By.XPATH, "//input[contains(@id,'last_name_')]").send_keys(H.l_name)
         driver.find_element(By.XPATH, "//input[contains(@id,'company_')]").send_keys(H.company)
-        time.sleep(3)
+        time.sleep(2)
         driver.find_element(By.XPATH, H.address_1).send_keys(H.add)
         driver.find_element(By.XPATH, "//input[contains(@id,'city_')]").send_keys(H.city)
         driver.find_element(By.XPATH, H.state_dd).click()
         scroll_to_state = driver.find_element(By.XPATH, H.state_city)
         driver.execute_script("arguments[0].scrollIntoView(true)", scroll_to_state)
-        time.sleep(1)
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.state_city)))
         driver.find_element(By.XPATH, H.state_city).click()
         driver.find_element(By.XPATH, "//input[contains(@id,'zip_code_')]").send_keys(H.zip_code)
         driver.find_element(By.XPATH, "//input[contains(@id,'phone_')]").send_keys(H.phone)
         driver.find_element(By.XPATH, H.check_box).click()
         driver.find_element(By.XPATH, H.confirm).click()
-        time.sleep(1)
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.confirm_2)))
         driver.find_element(By.XPATH, H.confirm_2).click()
+        wait.until(EC.visibility_of_element_located((By.XPATH, H.ship_address)))
 
-        time.sleep(3)
         # Shipping and billing addresses verification
         shipp = driver.find_element(By.XPATH, H.ship_address).text
         bill = driver.find_element(By.XPATH, H.bill_address).text
         try:
             address_check = shipp == bill
-            print("Shipping and billing addresses are correct!")
+            print("Shipping and billing addresses are correct. Test PASS!")
         except WDE:
-            print("Shipping and billing addresses are incorrect!")
+            print("Shipping and billing addresses are incorrect. Test FALL!")
         print("Address was successful created")
+
+        # Test case fept_003
+
+        # New address generation
+        address = H.addresses[random.randint(0, 194)]
+        zip_code = address[-5:]
+        add_a = reduce(lambda acc, x: acc + x, takewhile(lambda x: x != ",", address), "")
+        add = str(add_a)
+        city = address[len(add)+2: -10]
+        state = address[-8: -6]
+        state_city = H.us_abb.get(state)
+
+        # Address changing functionality
+        wait.until(EC.visibility_of_element_located((By.XPATH, "//div[contains(text(),'Payment methods')]")))
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.address_change)))
+        driver.find_element(By.XPATH, H.address_change).click()
+        wait.until(EC.visibility_of_element_located((By.XPATH, H.address_1)))
+        driver.find_element(By.XPATH, H.address_1).send_keys(Keys.CONTROL + "a")
+        driver.find_element(By.XPATH, H.address_1).send_keys(Keys.DELETE)
+        driver.find_element(By.XPATH, H.address_1).send_keys(add)
+        driver.find_element(By.XPATH, "//input[contains(@id,'city_')]").send_keys(Keys.CONTROL + "a")
+        driver.find_element(By.XPATH, "//input[contains(@id,'city_')]").send_keys(Keys.DELETE)
+        driver.find_element(By.XPATH, "//input[contains(@id,'city_')]").send_keys(city)
+        driver.find_element(By.XPATH, H.state_dd).click()
+        scroll_to_state = driver.find_element(By.XPATH, state_city)
+        driver.execute_script("arguments[0].scrollIntoView(true)", scroll_to_state)
+        wait.until(EC.element_to_be_clickable((By.XPATH, state_city)))
+        driver.find_element(By.XPATH, state_city).click()
+        driver.find_element(By.XPATH, "//input[contains(@id,'zip_code_')]").send_keys(Keys.CONTROL + "a")
+        driver.find_element(By.XPATH, "//input[contains(@id,'zip_code_')]").send_keys(Keys.DELETE)
+        driver.find_element(By.XPATH, "//input[contains(@id,'zip_code_')]").send_keys(zip_code)
+        driver.find_element(By.XPATH, H.check_box).click()
+        driver.find_element(By.XPATH, H.confirm).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.confirm_2)))
+        driver.find_element(By.XPATH, H.confirm_2).click()
+        wait.until(EC.visibility_of_element_located((By.XPATH, H.ship_address)))
+
+        # Shipping addresses changing verification
+        shipp_change = driver.find_element(By.XPATH, H.ship_address).text
+        try:
+            shipp_address_check = shipp_change != shipp
+            print("Address was changed. Test PASS!")
+        except WDE:
+            print("Shipping address wasn't changed. Test FALL")
+
+        # Shipping and billing addresses verification
+        bill_change = driver.find_element(By.XPATH, H.bill_address).text
+        try:
+            bill_address_check = bill_change == bill
+            print("Billing addresses are the same. Test PASS!")
+        except WDE:
+            print("Billing addresses are different. Test FALL!")
+
+        # Test case fept_004
+
+        # Go to Prada-Edition bag
+        time.sleep(6)
+        wait.until(EC.visibility_of_element_located((By.XPATH, "//span[contains(.,'Bags')]" )))
+        driver.find_element(By.XPATH, "//span[contains(.,'Bags')]").click()
+        driver.find_element(By.XPATH, H.re_edition).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.bag_img)))
+        driver.find_element(By.XPATH, H.bag_img).click()
+
+        # Buy black, white and orange bags Prada-Edition
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.add_shop_bag)))
+        driver.find_element(By.XPATH, H.bag_alabaster_button).click()
+        wait.until(EC.visibility_of_element_located((By.XPATH, H.bag_alabaster_img)))
+        time.sleep(2)
+        driver.find_element(By.XPATH, H.add_shop_bag).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.check_out)))
+        driver.find_element(By.XPATH, H.cross).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.add_shop_bag)))
+        driver.find_element(By.XPATH, H.bag_white_button).click()
+        wait.until(EC.visibility_of_element_located((By.XPATH, H.bag_white_img)))
+        time.sleep(2)
+        driver.find_element(By.XPATH, H.add_shop_bag).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.check_out)))
+        driver.find_element(By.XPATH, H.cross).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.add_shop_bag)))
+        driver.find_element(By.XPATH, H.bag_orange_button).click()
+        wait.until(EC.visibility_of_element_located((By.XPATH, H.bag_orange_img)))
+        time.sleep(2)
+        driver.find_element(By.XPATH, H.add_shop_bag).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.check_out)))
+        driver.find_element(By.XPATH, H.cross).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.add_shop_bag)))
+
+        # Verify quantity in the cart
+        cart_quantity = driver.find_element(By.XPATH, "//span[contains(.,'Your selection (')]").text
+        try:
+            cart_quantity_check = cart_quantity == "3"
+            print("Correct quantity. Test PASS!")
+        except WDE:
+            print("Incorrect quantity. Test FALL")
 
     def tearDown(self):
         self.driver.quit()
