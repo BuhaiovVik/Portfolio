@@ -11,5 +11,5 @@
 </details>
 
 **<details><summary>BrowserStack Speedlab</summary>**
-- open [BrowserStack Speedlab](https://www.browserstack.com/speedlab/new-report/6d5b565aff5b604b7af667cc26734dd6c3cd1a99 "Speedlab link").
+- open link [BrowserStack Speedlab](https://www.browserstack.com/speedlab/new-report/79d0264f687dd2cd0076284460a507c4af3e9601 "Speedlab link").
 </details>
