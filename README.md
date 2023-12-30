@@ -41,7 +41,7 @@
 </details>
 
 **<details><summary>4️⃣ Performance testing</summary>**
-* [LightHouse](https://googlechrome.github.io/lighthouse/viewer/?gist=672fbeecbc8f6edc276de6e8eb4e4bbf "LightHouse report")
+* [LightHouse](https://googlechrome.github.io/lighthouse/viewer/?gist=e517117951dc8b0b51add7a6b3865792 "LightHouse report")
 * [GTmetrix](https://gtmetrix.com/reports/www.gucci.com/wSECrUN7/ "GTmetrix report")
 * [BrowserStack Speedlab](https://www.browserstack.com/speedlab/new-report/6d5b565aff5b604b7af667cc26734dd6c3cd1a99 "Speedlab report")
 </details>
