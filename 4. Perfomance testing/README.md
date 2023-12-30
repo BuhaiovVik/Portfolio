@@ -6,8 +6,8 @@
 </details>
 
 **<details><summary>GTmetrix</summary>**
-- open [GTmetrix](https://gtmetrix.com/reports/www.gucci.com/wSECrUN7/ "GTmetrix link");
-- open [GTmetrix_www.gucci.com.pdf](https://github.com/BuhaiovVik/Portfolio/blob/main/4.%20Perfomance%20testing/GTmetrix_www.gucci.com.pdf "GTmetrix pdf").
+- open link [GTmetrix](https://gtmetrix.com/reports/www.prada.com/Gdn2Jnv1/ "GTmetrix link");
+- open [GTmetrix_Prada.pdf](https://github.com/BuhaiovVik/Portfolio/blob/main/4.%20Perfomance%20testing/GTmetrix_Prada.pdf "GTmetrix pdf").
 </details>
 
 **<details><summary>BrowserStack Speedlab</summary>**
