@@ -7,6 +7,13 @@ fake = Faker()
 
 # Locators
 cross = "//button[@aria-label='prnux_close_minicart']"
+home_decor = "//a[@href='/us/en/home/home-decor-and-accessories/c/10489US']"
+go_set = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/2/2SG/2SG008/0DCF0002"
+          "/2SG008_0DC_F0002_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.600.600.jpg, "
+          "https://www.prada.com/content/dam/pradabkg_products/2/2SG/2SG008/0DCF0002/2SG008_0DC_F0002_SLF.jpg"
+          "/_jcr_content/renditions/cq5dam.web.hebebed.1200.1200.jpg 2x, "
+          "https://www.prada.com/content/dam/pradabkg_products/2/2SG/2SG008/0DCF0002/2SG008_0DC_F0002_SLF.jpg"
+          "/_jcr_content/renditions/cq5dam.web.hebebed.1800.1800.jpg 3x']")
 check_out = "//button[contains(.,'Proceed to checkout')]"
 check_box = ("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/section[1]/div[5]/div[1]/div[1]/div["
              "1]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/input[1]")
@@ -29,12 +36,9 @@ state_dd = ("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/s
             "1]/div[2]/div[1]/div[3]/div[9]/div[1]/div[1]/input[1]")
 re_edition = ("//a[@href='https://www.prada.com/us/en/womens/essentials/prada-re-edition/c/10103US'][contains(.,"
               "'Prada Re-Edition')]")
-bag_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0632"
-           "/1BH204_R064_F0632_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.600.600.jpg, "
-           "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0632/1BH204_R064_F0632_V_V9L_SLF"
-           ".jpg/_jcr_content/renditions/cq5dam.web.hebebed.1200.1200.jpg 2x, "
-           "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0632/1BH204_R064_F0632_V_V9L_SLF"
-           ".jpg/_jcr_content/renditions/cq5dam.web.hebebed.1800.1800.jpg 3x']")
+bag_img = ("/html[1]/body[1]/div[3]/div[2]/div[1]/div[3]/div[1]/div[1]/div[5]/ol[1]/li[1]/div[1]/article[1]/a[1]/div["
+           "1]/div[1]/div[1]/picture[2]/img[1]")
+show_more = "/html[1]/body[1]/div[3]/div[2]/div[1]/div[3]/div[1]/div[1]/div[4]/div[1]/a[1]/span[1]"
 add_shop_bag = "(//div[contains(.,'Add to shopping bag')])[22]"
 bag_alabaster_button = "//*[@title='Alabaster']"
 bag_alabaster_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0WZT"
@@ -57,7 +61,14 @@ bag_orange_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_pro
                   "/1BH204_R064_F0049_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1200.1200.jpg 2x, "
                   "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0049"
                   "/1BH204_R064_F0049_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1800.1800.jpg 3x']")
-
+go_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/2/2SG/2SG008/0DCF0002"
+          "/2SG008_0DC_F0002_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.200.200.jpg, "
+          "https://www.prada.com/content/dam/pradabkg_products/2/2SG/2SG008/0DCF0002/2SG008_0DC_F0002_SLF.jpg"
+          "/_jcr_content/renditions/cq5dam.web.hebebed.400.400.jpg 2x, "
+          "https://www.prada.com/content/dam/pradabkg_products/2/2SG/2SG008/0DCF0002/2SG008_0DC_F0002_SLF.jpg"
+          "/_jcr_content/renditions/cq5dam.web.hebebed.600.600.jpg 3x']")
+frag_img = ("/html[1]/body[1]/div[3]/div[2]/div[1]/div[3]/div[1]/div[1]/div[4]/ol[1]/li[1]/div[1]/article[1]/a["
+            "1]/div[1]/div[1]/div[1]/picture[2]/img[1]")
 # Random data
 phone = random.randint(2000000000, 5555555555)
 date = fake.date()
@@ -263,7 +274,7 @@ address = addresses[random.randint(0, 185)]
 zip_code = address[-5:]
 add_a = reduce(lambda acc, x: acc + x, takewhile(lambda x: x != ",", address), "")
 add = str(add_a)
-city = address[len(add) + 2: -10]
+city = address[len(add) + 2: -9]
 state = address[-8: -6]
 
 # Dictionary with XPATH locators for each state
@@ -322,3 +333,4 @@ us_abb = {
 
 # XPATH for current state
 state_city = us_abb.get(state)
+print(city)
