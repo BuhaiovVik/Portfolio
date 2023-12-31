@@ -133,7 +133,7 @@ class Chrome(unittest.TestCase):
         zip_code = address[-5:]
         add_a = reduce(lambda acc, x: acc + x, takewhile(lambda x: x != ",", address), "")
         add = str(add_a)
-        city = address[len(add)+2: -10]
+        city = address[len(add)+2: -9]
         state = address[-8: -6]
         state_city = H.us_abb.get(state)
 
@@ -219,6 +219,67 @@ class Chrome(unittest.TestCase):
             print("Correct quantity. Test PASS!")
         except WDE:
             print("Incorrect quantity. Test FALL")
+
+        # fept-005
+
+        # Go to "Home and decor"
+        driver.find_element(By.XPATH, "//span[contains(text(),'HOME')]").click()
+        driver.find_element(By.XPATH, H.home_decor).click()
+        wait.until(EC.title_is("Prada Home: Home Decor and Accessories | PRADA"))
+        driver.find_element(By.XPATH, H.show_more).click()
+
+        # Buy "Saffiano leather Go set"
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.go_set)))
+        driver.find_element(By.XPATH, H.go_set).click()
+
+        # Webpage link verify
+        try:
+            link_check = driver.page_source == "https://prada.com/us/en/p/saffiano-leather-go-set/2SG008_0DC_F0002"
+            print("Webpage like text is correct. PASS!")
+        except TimeoutException:
+            print("Webpage like text is incorrect. FALL!")
+
+        # Buy Go and remove from the cart
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.add_shop_bag)))
+        driver.find_element(By.XPATH, H.add_shop_bag).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, "(//span[contains(.,'Remove')])[1]")))
+        driver.find_element(By.XPATH, "(//span[contains(.,'Remove')])[1]").click()
+        wait.until_not(EC.visibility_of_element_located((By.XPATH, H.go_img)))
+
+        # Verify item was removed
+        cart_quantity = driver.find_element(By.XPATH, "//span[contains(.,'Your selection (')]").text
+        try:
+            cart_quantity_check = cart_quantity == "3"
+            print("Correct quantity. Test PASS!")
+        except WDE:
+            print("Incorrect quantity. Test FALL")
+
+        # fept_006
+
+        driver.find_element(By.XPATH, "//span[@class='menu__linkText'][contains(.,'Beauty and Fragrances')]").click()
+        driver.find_element(By.XPATH, "(//a[@href='/us/en/womens/fragrances/womens-fragrances/c/10464US'])[2]").click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.frag_img)))
+        driver.find_element(By.XPATH, H.frag_img).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, H.add_shop_bag)))
+        driver.find_element(By.XPATH, H.add_shop_bag).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, "//button[contains(.,'Go to shopping bag')]")))
+        driver.find_element(By.XPATH, "//button[contains(.,'Go to shopping bag')]").click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, "(//span[contains(.,'Edit')])[1]")))
+        driver.find_element(By.XPATH, "(//span[contains(.,'Edit')])[1]").click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, "//span[@class='pr-icon-add']")))
+        driver.find_element(By.XPATH, "//span[@class='pr-icon-add']").click()
+        driver.find_element(By.XPATH, "//span[@class='pr-icon-add']").click()
+        driver.find_element(By.XPATH, "//span[@class='pr-icon-add']").click()
+        driver.find_element(By.XPATH, "//span[@class='pr-icon-add']").click()
+        quantity_edit = driver.find_element(By.XPATH, '//*[@class="detail-product-quantity-selector__value"]').text
+        try:
+            quantity_edit_check = quantity_edit == "5"
+            print("Correct quantity. Test PASS!")
+        except WDE:
+            print("Incorrect quantity. Test FALL")
+
+        # fept_007
+
 
     def tearDown(self):
         self.driver.quit()
