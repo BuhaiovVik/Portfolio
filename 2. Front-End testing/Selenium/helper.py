@@ -1,13 +1,14 @@
 from faker import Faker
 import random
-from functools import reduce
-from itertools import takewhile
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 fake = Faker()
 
 # Locators
 cross = "//button[@aria-label='prnux_close_minicart']"
-home_decor = "//a[@href='/us/en/home/home-decor-and-accessories/c/10489US']"
+home_decor = "//a[contains(.,'Home Decor and Accessories')]"
 go_set = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/2/2SG/2SG008/0DCF0002"
           "/2SG008_0DC_F0002_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.600.600.jpg, "
           "https://www.prada.com/content/dam/pradabkg_products/2/2SG/2SG008/0DCF0002/2SG008_0DC_F0002_SLF.jpg"
@@ -40,13 +41,13 @@ bag_img = ("/html[1]/body[1]/div[3]/div[2]/div[1]/div[3]/div[1]/div[1]/div[5]/ol
            "1]/div[1]/div[1]/picture[2]/img[1]")
 show_more = "/html[1]/body[1]/div[3]/div[2]/div[1]/div[3]/div[1]/div[1]/div[4]/div[1]/a[1]/span[1]"
 add_shop_bag = "(//div[contains(.,'Add to shopping bag')])[22]"
-bag_alabaster_button = "//*[@title='Alabaster']"
-bag_alabaster_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0WZT"
-                     "/1BH204_R064_F0WZT_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.600.600.jpg, "
-                     "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0WZT"
-                     "/1BH204_R064_F0WZT_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1200.1200.jpg 2x, "
-                     "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0WZT"
-                     "/1BH204_R064_F0WZT_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1800.1800.jpg 3x']")
+bag_mintgreen_button = "//*[@title='Mint Green']"
+bag_mintgreen_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0223"
+                     "/1BH204_R064_F0223_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.600.600.jpg, "
+                     "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0223"
+                     "/1BH204_R064_F0223_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1200.1200.jpg 2x, "
+                     "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0223"
+                     "/1BH204_R064_F0223_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1800.1800.jpg 3x']")
 bag_white_button = "//*[@title='White']"
 bag_white_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0009"
                  "/1BH204_R064_F0009_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.600.600.jpg, "
@@ -69,13 +70,38 @@ go_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/2/
           "/_jcr_content/renditions/cq5dam.web.hebebed.600.600.jpg 3x']")
 frag_img = ("/html[1]/body[1]/div[3]/div[2]/div[1]/div[3]/div[1]/div[1]/div[4]/ol[1]/li[1]/div[1]/article[1]/a["
             "1]/div[1]/div[1]/div[1]/picture[2]/img[1]")
+frag_dd = "(//a[@href='https://www.prada.com/us/en/womens/fragrances/womens-fragrances/c/10464US'])[2]"
+confirm_cart = "//button[contains(.,'Confirm')]"
+proceed_checkout = ("/html[1]/body[1]/div[3]/div[2]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div["
+                    "2]/div[1]/button[1]")
+confirm_checkout = "/html[1]/body[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/button[1]/div[1]"
+confirm_address_checkout = ("/html[1]/body[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div["
+                            "2]/div[1]/h2[1]")
+cart_icon = "/html[1]/body[1]/div[3]/div[1]/header[1]/div[1]/div[1]/nav[1]/div[2]/div[5]/a[1]/span[1]"
+card_name = (
+    "/html[1]/body[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/form[1]/div["
+    "1]/div[1]/div[1]/div[1]/input[1]")
+card_lname = ("/html[1]/body[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/form["
+              "1]/div[1]/div[2]/div[1]/div[1]/input[1]")
+card_number = ("//div[@class='md:col-span-4 col-span-1 flex flex-row w-full input-container input-cc-number relative "
+               "h-14 input-container-standard border border-black bg-white']")
+card_mmyy = ("/html[1]/body[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/form["
+             "1]/div[1]/div[2]/div[1]/div[1]/input[1]")
+card_cvv = ("/html[1]/body[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/form["
+            "1]/div[1]/div[2]/div[1]/div[1]/input[1]")
+log_out_icon = "/html[1]/body[1]/div[3]/div[1]/header[1]/div[1]/div[1]/nav[1]/div[2]/div[3]/a[1]/span[1]"
+log_out = "//button[@class='popup-logged-area__item'][contains(.,'Log out')]"
+basket_del = ("//body/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/section[1]/article[3]/div[1]/div[2]/div[1]/div["
+              "2]/div[1]/div[2]/button[2]/*[1]")
+delete_confirm = ("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/section[1]/div[11]/div[1]/div["
+                  "1]/div[1]/div[2]/button[1]")
+
 # Random data
 phone = random.randint(2000000000, 5555555555)
 date = fake.date()
 mm_dd = date[5:7] + date[8:10]
 f_name = fake.first_name()
 l_name = fake.last_name()
-password = "p@sSword" + str(random.randint(0, 999))
 company = fake.company()
 
 # Addresses testing require real postal addresses, that why I can't use faker library and created this list
@@ -95,7 +121,6 @@ addresses = [
     "3018 East Ave, Central Square NY 13036",
     "100 Thruway Plaza, Cheektowaga NY 14225",
     "8064 Brewerton Rd, Cicero NY 13039",
-    "5033 Transit Road, Clarence NY 14031",
     "3949 Route 31, Clay NY 13041",
     "139 Merchant Place, Cobleskill NY 12043",
     "85 Crooked Hill Road, Commack NY 11725",
@@ -103,7 +128,6 @@ addresses = [
     "279 Troy Road, East Greenbush NY 12061",
     "2465 Hempstead Turnpike, East Meadow NY 11554",
     "6438 Basile Rowe, East Syracuse NY 13057",
-    "25737 US Rt 11, Evans Mills NY 13637",
     "901 Route 110, Farmingdale NY 11735",
     "2400 Route 9, Fishkill NY 12524",
     "10401 Bennett Road, Fredonia NY 14063",
@@ -117,7 +141,6 @@ addresses = [
     "5360 Southwestern Blvd, Hamburg NY 14075",
     "103 North Caroline St, Herkimer NY 13350",
     "1000 State Route 36, Hornell NY 14843",
-    "1400 County Rd 64, Horseheads NY 14845",
     "135 Fairgrounds Memorial Pkwy, Ithaca NY 14850",
     "2 Gannett Dr, Johnson City NY 13790",
     "233 5th Ave Ext, Johnstown NY 12095",
@@ -270,12 +293,26 @@ addresses = [
 ]
 
 # Random addresses dictionary based
-address = addresses[random.randint(0, 185)]
+address = addresses[random.randint(0, 182)]
 zip_code = address[-5:]
-add_a = reduce(lambda acc, x: acc + x, takewhile(lambda x: x != ",", address), "")
-add = str(add_a)
+add = ""
+for char in address:
+    if char == ",":
+        break
+    add += char
 city = address[len(add) + 2: -9]
 state = address[-8: -6]
+
+# New address generation
+address_new = addresses[random.randint(0, 182)]
+zip_code_new = address[-5:]
+add_new = ""
+for char in address:
+    if char == ",":
+        break
+    add_new += char
+city_new = address[len(add) + 2: -9]
+state_new = address[-8: -6]
 
 # Dictionary with XPATH locators for each state
 us_abb = {
@@ -333,4 +370,22 @@ us_abb = {
 
 # XPATH for current state
 state_city = us_abb.get(state)
-print(city)
+state_city_new = us_abb.get(state)
+
+
+# Login
+def login(driver):
+    wait = WebDriverWait(driver, 20)
+    wait.until(EC.element_to_be_clickable((By.XPATH, "//*[text() = 'ACCEPT ALL']")))
+    driver.find_element(By.XPATH, "//*[text() = 'ACCEPT ALL']").click()
+    wait.until(EC.visibility_of_element_located((By.ID, "gigya-textbox-100719189608483120")))
+    with open("email.txt", "r") as file:
+        email_text = file.read().strip()
+    driver.find_element(By.ID, "gigya-textbox-100719189608483120").send_keys(email_text)
+    driver.find_element(By.XPATH, "//input[contains(@value,'Next')]").click()
+    wait.until(EC.element_to_be_clickable((By.XPATH, "//input[contains(@value,'Login')]")))
+    with open("pass.txt", "r") as file:
+        pass_text = file.read().strip()
+    driver.find_element(By.ID, "gigya-password-83462624292152350").send_keys(pass_text)
+    driver.find_element(By.XPATH, "//input[contains(@value,'Login')]").click()
+    wait.until(EC.element_to_be_clickable((By.XPATH, '//*[text() = "Start shopping "]')))
