@@ -2,7 +2,7 @@
 Requirements:
 1. Python 3.1x.x+
    - check version: ``` python --version ```
-   - install: [Python](https://www.python.org/downloads/ "link")
+   - install: [Python](https://www.python.org/downloads/ "YouTube")
 2. Pip 23.x.x+
     - check version: ``` pip3 --version ```
     - pip update: ``` python -m pip3 install --upgrade pip ```
