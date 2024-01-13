@@ -1,7 +1,4 @@
-**🎥 Recording of the script execution:**
-
-[YouTube](https://www.youtube.com/playlist?list=PLidTufmM0EDx5z2zXrkCfavfFuAkSaZBY "link")
-**<details><summary>💡 How to run script?</summary>**
+**<details><summary>💡 How to run the script?</summary>**
 Requirements:
 1. Python 3.1x.x+
    - check version: ``` python --version ```
@@ -22,3 +19,5 @@ Requirements:
 8. Random
    - install: ``` pip install random2 ```
 </details>
+
+[**🎥 Recording of the script execution**](https://www.youtube.com/playlist?list=PLidTufmM0EDx5z2zXrkCfavfFuAkSaZBY "link")
