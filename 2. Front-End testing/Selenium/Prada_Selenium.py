@@ -5,7 +5,6 @@ from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-import AllureReports
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import WebDriverException as WDE
@@ -64,9 +63,11 @@ class Chrome(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -410,7 +411,7 @@ class Chrome(unittest.TestCase):
         driver.find_element(By.XPATH, "//input[contains(@value,'Next')]").click()
         try:
             wait.until(EC.visibility_of_element_located((By.XPATH, "//input[@value='Register']")))
-            print("User was redirected to register area. Test FALL")
+            print("User was redirected to register area. Test PASS")
         except WDE:
             wait.until(EC.element_to_be_clickable((By.XPATH, "//input[contains(@value,'Login')]")))
             print("User was redirected to login area. Test FALL")
@@ -505,7 +506,7 @@ class Chrome(unittest.TestCase):
     def test12_feng_004_max(self):
         driver = self.driver
         driver.get("https://www.prada.com/us/en/login-register.html")
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(driver, 5)
 
         # Login to the account
         H.login(driver)
@@ -687,7 +688,7 @@ class Chrome(unittest.TestCase):
     def test16_feng_008_max(self):
         driver = self.driver
         driver.get("https://www.prada.com/us/en/login-register.html")
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(driver, 5)
 
         # Login to the account
         H.login(driver)
@@ -754,9 +755,11 @@ class Chrome(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -805,9 +808,11 @@ class Chrome(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -856,9 +861,11 @@ class Chrome(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -907,9 +914,11 @@ class Chrome(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -958,9 +967,11 @@ class Chrome(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -1009,9 +1020,11 @@ class Chrome(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -1082,9 +1095,11 @@ class Edge(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -1428,7 +1443,7 @@ class Edge(unittest.TestCase):
         driver.find_element(By.XPATH, "//input[contains(@value,'Next')]").click()
         try:
             wait.until(EC.visibility_of_element_located((By.XPATH, "//input[@value='Register']")))
-            print("User was redirected to register area. Test FALL")
+            print("User was redirected to register area. Test PASS")
         except WDE:
             wait.until(EC.element_to_be_clickable((By.XPATH, "//input[contains(@value,'Login')]")))
             print("User was redirected to login area. Test FALL")
@@ -1523,7 +1538,7 @@ class Edge(unittest.TestCase):
     def test12_feng_004_max(self):
         driver = self.driver
         driver.get("https://www.prada.com/us/en/login-register.html")
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(driver, 5)
 
         # Login to the account
         H.login(driver)
@@ -1705,7 +1720,7 @@ class Edge(unittest.TestCase):
     def test16_feng_008_max(self):
         driver = self.driver
         driver.get("https://www.prada.com/us/en/login-register.html")
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(driver, 5)
 
         # Login to the account
         H.login(driver)
@@ -1772,9 +1787,11 @@ class Edge(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -1823,9 +1840,11 @@ class Edge(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -1874,9 +1893,11 @@ class Edge(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -1925,9 +1946,11 @@ class Edge(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -1976,9 +1999,11 @@ class Edge(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -2027,9 +2052,11 @@ class Edge(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -2100,9 +2127,11 @@ class Firefox(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -2446,7 +2475,7 @@ class Firefox(unittest.TestCase):
         driver.find_element(By.XPATH, "//input[contains(@value,'Next')]").click()
         try:
             wait.until(EC.visibility_of_element_located((By.XPATH, "//input[@value='Register']")))
-            print("User was redirected to register area. Test FALL")
+            print("User was redirected to register area. Test PASS")
         except WDE:
             wait.until(EC.element_to_be_clickable((By.XPATH, "//input[contains(@value,'Login')]")))
             print("User was redirected to login area. Test FALL")
@@ -2541,7 +2570,7 @@ class Firefox(unittest.TestCase):
     def test12_feng_004_max(self):
         driver = self.driver
         driver.get("https://www.prada.com/us/en/login-register.html")
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(driver, 5)
 
         # Login to the account
         H.login(driver)
@@ -2723,7 +2752,7 @@ class Firefox(unittest.TestCase):
     def test16_feng_008_max(self):
         driver = self.driver
         driver.get("https://www.prada.com/us/en/login-register.html")
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(driver, 5)
 
         # Login to the account
         H.login(driver)
@@ -2790,9 +2819,11 @@ class Firefox(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -2841,9 +2872,11 @@ class Firefox(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -2892,9 +2925,11 @@ class Firefox(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -2943,9 +2978,11 @@ class Firefox(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -2994,9 +3031,11 @@ class Firefox(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -3045,9 +3084,11 @@ class Firefox(unittest.TestCase):
         driver.switch_to.window(driver.window_handles[0])
         time.sleep(10)
         driver.refresh()
+        time.sleep(2)
         mail = driver.find_element(By.XPATH, H.mail_scroll)
         driver.execute_script("arguments[0].scrollIntoView(true)", mail)
         wait.until(EC.element_to_be_clickable((By.XPATH, H.mail_confirm)))
+        driver.find_element(By.XPATH, "//body/div[@id='__next']/div[4]/section[1]/div[1]/div[1]/button[1]/*[1]").click()
         driver.find_element(By.XPATH, H.mail_confirm).click()
         time.sleep(1)
         code = driver.find_element(By.XPATH, "//tbody/tr[3]/td[1]").text
@@ -3075,6 +3116,3 @@ class Firefox(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
 
-
-if __name__ == "__main__":
-    unittest.main(AllureReports)
