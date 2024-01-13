@@ -8,7 +8,7 @@
 
 **<details><summary>2️⃣ Front-End testing</summary>**
 
-*<details><summary>Selenium WebDriver</summary>*
+Selenium WebDriver
  
 * Local Script
   * [Unitest](https://github.com/BuhaiovVik/Portfolio/blob/main/2.%20Front-End%20testing/Selenium/Prada_Selenium.py "Selenium python ")
@@ -19,18 +19,6 @@
 * Reports
   * [HTML](https://fluffy-malabi-58a284.netlify.app/ "link")
   * [Allure](http://squarespace.com/ "Title")
-</details>
-
-*<details><summary>Playwright</summary>*
- 
-* Local Script
-  * [Pytest](http://squarespace.com/ "Title")
-* Cloud Script (Browser Stack)
-  * [Serial](http://squarespace.com/ "Title")
-  * [Paralel](http://squarespace.com/ "Title")
-* Reports
-  * [HTML](http://squarespace.com/ "Title")
-</details>
 
 </details>
 
