@@ -22,9 +22,9 @@ address_1 = ("/html[1]/body[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/
              "1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/input[1]")
 address_change = ("//body/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/section[1]/article[3]/div[1]/div[2]/div["
                   "1]/div[2]/div[1]/div[2]/button[1]")
-mail_scroll = "//body/div[@id='__next']/section[1]/div[1]/div[3]/div[1]/div[1]/div[1]"
+mail_scroll = "/html[1]/body[1]/div[1]/div[3]/section[1]/div[1]/div[3]/div[1]/div[1]/div[2]/button[1]"
 drop_down = """//select[@id='gigya-dropdown-43592239753641940']/option[text()="I'd rather not say"]"""
-mail_confirm = "//p[contains(text(),'Prada - Your new account confirmation')]"
+mail_confirm = "/html[1]/body[1]/div[1]/div[3]/section[1]/div[1]/div[3]/div[1]/div[1]/div[2]/button[1]/div[1]"
 log_icon = "//span[@class='utils__icon pr-icon-new-logout']"
 address_dd = "//a[@href='/us/en/logged-area.html?section=personal-information']"
 address_title = "Logged Area | PRADA"
@@ -48,13 +48,13 @@ bag_mintgreen_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_
                      "/1BH204_R064_F0223_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1200.1200.jpg 2x, "
                      "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0223"
                      "/1BH204_R064_F0223_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1800.1800.jpg 3x']")
-bag_white_button = "//*[@title='White']"
-bag_white_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0009"
-                 "/1BH204_R064_F0009_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.600.600.jpg, "
-                 "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0009"
-                 "/1BH204_R064_F0009_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1200.1200.jpg 2x, "
-                 "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0009"
-                 "/1BH204_R064_F0009_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1800.1800.jpg 3x']")
+bag_white_button = "//*[@title='Citron Yellow']"
+bag_white_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0322"
+                 "/1BH204_R064_F0322_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.600.600.jpg, "
+                 "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0322"
+                 "/1BH204_R064_F0322_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1200.1200.jpg 2x, "
+                 "https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0322"
+                 "/1BH204_R064_F0322_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.1800.1800.jpg 3x']")
 bag_orange_button = "//*[@title='Orange']"
 bag_orange_img = ("//img[@srcset='https://www.prada.com/content/dam/pradabkg_products/1/1BH/1BH204/R064F0049"
                   "/1BH204_R064_F0049_V_V9L_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.600.600.jpg, "
