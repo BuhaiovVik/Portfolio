@@ -2,7 +2,7 @@
 Requirements:
 1. Python 3.1x.x+
    - check version: ``` python --version ```
-   - install: [Python](https://www.python.org/downloads/ "YouTube")
+   - install: [Python](https://www.python.org/downloads/ "link")
 2. Pip 23.x.x+
     - check version: ``` pip3 --version ```
     - pip update: ``` python -m pip3 install --upgrade pip ```
@@ -20,4 +20,4 @@ Requirements:
    - install: ``` pip install random2 ```
 </details>
 
-[**🎥 Recording of the script execution**](https://www.youtube.com/playlist?list=PLidTufmM0EDx5z2zXrkCfavfFuAkSaZBY "link")
+[**🎥 Recording of the script execution**](https://www.youtube.com/playlist?list=PLidTufmM0EDx5z2zXrkCfavfFuAkSaZBY "YouTube")
