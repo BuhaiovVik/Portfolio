@@ -17,7 +17,7 @@
   * [Serial](http://squarespace.com/ "Title")
   * [Paralel](http://squarespace.com/ "Title")
 * Reports
-  * [HTML](http://squarespace.com/ "Title")
+  * [HTML](https://github.com/BuhaiovVik/Portfolio/blob/main/2.%20Front-End%20testing/Selenium/Report%20Prada.html "Download and open")
   * [Allure](http://squarespace.com/ "Title")
 </details>
 
