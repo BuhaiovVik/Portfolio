@@ -1,0 +1,2 @@
+User received mail with verification code
+Title is correct. Test PASS!

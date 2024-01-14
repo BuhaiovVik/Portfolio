@@ -1,0 +1,2 @@
+User received mail with verification code
+User can't create account with weak password. Test PASS

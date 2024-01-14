@@ -1,0 +1,2 @@
+Address wasn't create previously
+User not abel to create address with incorrect zip code. Test PASS

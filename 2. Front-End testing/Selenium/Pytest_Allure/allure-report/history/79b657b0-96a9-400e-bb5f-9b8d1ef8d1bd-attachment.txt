@@ -1,0 +1,4 @@
+User received mail with verification code
+Verification code was correct
+Title is correct. Test PASS!
+Account was successful created
