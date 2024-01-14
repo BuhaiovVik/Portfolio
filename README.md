@@ -7,6 +7,7 @@
 </details>
 
 **<details><summary>2️⃣ Front-End testing</summary>**
+
 Selenium WebDriver
  
 * Local Script
