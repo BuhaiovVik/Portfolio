@@ -1,0 +1,3 @@
+Title is correct. Test PASS!
+Shipping and billing addresses are correct. Test PASS!
+Address was successful created

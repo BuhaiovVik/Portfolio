@@ -1,0 +1,3 @@
+User was successfully logged with correct data
+Title is correct. Test PASS!
+User was successful log out. Test PASS

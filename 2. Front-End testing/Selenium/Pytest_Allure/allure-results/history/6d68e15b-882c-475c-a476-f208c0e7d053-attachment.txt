@@ -1,0 +1,2 @@
+Confirm button wasn't appeared
+Incorrect credit card wasn't accepted. Test PASS
