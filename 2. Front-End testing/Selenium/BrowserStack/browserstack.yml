@@ -1,0 +1,16 @@
+userName: your_name
+accessKey: your_key
+platforms:
+  - os: Windows
+    osVersion: 11
+    browserName: Chrome
+    browserVersion: latest
+browserstackLocal: true
+parallelsPerPlatform: 1
+buildName: prada
+buildIdentifier: ${BUILD_NUMBER}
+projectName: prada
+debug: true
+networkLogs: true
+consoleLogs: info
+framework: pytest
