@@ -11,7 +11,7 @@
 Selenium WebDriver
  
 * Local Script
-  * [Unitest](https://github.com/BuhaiovVik/Portfolio/blob/main/2.%20Front-End%20testing/Selenium/Prada_Selenium.py "Selenium python ")
+  * [Unitest](https://github.com/BuhaiovVik/Portfolio/tree/main/2.%20Front-End%20testing/Selenium "Selenium python ")
   * [Pytest](http://squarespace.com/ "Title")
 * Cloud Script (Browser Stack)
   * [Serial](http://squarespace.com/ "Title")
