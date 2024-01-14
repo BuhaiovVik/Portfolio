@@ -22,7 +22,8 @@ Selenium WebDriver
 </details>
 
 **<details><summary>3️⃣ API testing</summary>**
-* Postman API
+
+Postman API
   * [Tests](http://squarespace.com/ "Title")
   * [Environment](http://squarespace.com/ "Title")
 </details>
