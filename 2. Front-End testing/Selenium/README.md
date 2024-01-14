@@ -1,5 +1,7 @@
 **<details><summary>💡 How to run the script?</summary>**
-Requirements:
+
+
+📋 Requirements:
 1. Python 3.1x.x+
    - check version: ``` python --version ```
    - install: [Python](https://www.python.org/downloads/ "link")
