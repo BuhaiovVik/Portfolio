@@ -1,7 +1,7 @@
-**<details><summary>💡 How to run the script?</summary>**
+#### 💡 How to run the script?
+Run in the script directory ``` python -m unittest Prada_Selenium.py ``` and meet the requirements.
 
-
-📋 Requirements:
+**<details><summary>📋 Requirements</summary>**
 1. Python 3.1x.x+
    - check version: ``` python --version ```
    - install: [Python](https://www.python.org/downloads/ "link")
