@@ -14,7 +14,7 @@ Selenium WebDriver
   * [Unitest](https://github.com/BuhaiovVik/Portfolio/tree/main/2.%20Front-End%20testing/Selenium "Selenium python ")
   * [Pytest](https://github.com/BuhaiovVik/Portfolio/tree/main/2.%20Front-End%20testing/Selenium/Pytest_Allure "Selenium python ")
 * Cloud Script
-  * [BrowserStack](http://squarespace.com/ "Title")
+  * [BrowserStack](https://github.com/BuhaiovVik/Portfolio/tree/main/2.%20Front-End%20testing/Selenium/BrowserStack "Selenium python ")
 * Reports
   * [HTML](https://prada-html.netlify.app/ "link")
   * [Allure](https://prada-allure.netlify.app "link")
