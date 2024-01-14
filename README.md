@@ -13,9 +13,8 @@ Selenium WebDriver
 * Local Script
   * [Unitest](https://github.com/BuhaiovVik/Portfolio/tree/main/2.%20Front-End%20testing/Selenium "Selenium python ")
   * [Pytest](https://github.com/BuhaiovVik/Portfolio/tree/main/2.%20Front-End%20testing/Selenium/Pytest_Allure "Selenium python ")
-* Cloud Script (Browser Stack)
-  * [Serial](http://squarespace.com/ "Title")
-  * [Paralel](http://squarespace.com/ "Title")
+* Cloud Script
+  * [BrowserStack](http://squarespace.com/ "Title")
 * Reports
   * [HTML](https://prada-html.netlify.app/ "link")
   * [Allure](https://prada-allure.netlify.app "link")
