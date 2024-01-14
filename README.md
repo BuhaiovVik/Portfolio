@@ -7,7 +7,6 @@
 </details>
 
 **<details><summary>2️⃣ Front-End testing</summary>**
-https://github.com/BuhaiovVik/Portfolio/tree/main/2.%20Front-End%20testing/Selenium/Pytest_Allure
 Selenium WebDriver
  
 * Local Script
