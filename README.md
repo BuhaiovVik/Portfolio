@@ -17,7 +17,7 @@ Selenium WebDriver
   * [Serial](http://squarespace.com/ "Title")
   * [Paralel](http://squarespace.com/ "Title")
 * Reports
-  * [HTML](https://fluffy-malabi-58a284.netlify.app/ "link")
+  * [HTML](prada-html.netlify.app "link")
   * [Allure](http://squarespace.com/ "Title")
 
 </details>
