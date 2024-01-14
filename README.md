@@ -18,7 +18,7 @@ Selenium WebDriver
   * [Paralel](http://squarespace.com/ "Title")
 * Reports
   * [HTML](https://prada-html.netlify.app/ "link")
-  * [Allure](http://squarespace.com/ "Title")
+  * [Allure](https://prada-allure.netlify.app "link")
 
 </details>
 
