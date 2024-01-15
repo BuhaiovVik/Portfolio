@@ -24,8 +24,8 @@ Selenium WebDriver
 **<details><summary>3️⃣ API testing</summary>**
 
 Postman API
-  * [Tests](http://squarespace.com/ "Title")
-  * [Environment](http://squarespace.com/ "Title")
+  * [Collection](https://github.com/BuhaiovVik/Portfolio/blob/main/3.%20API%20testing/Prada%20create%20account.postman_collection.json "collection")
+  * [Environment](https://github.com/BuhaiovVik/Portfolio/blob/main/3.%20API%20testing/Prada_env.postman_environment.json "environment")
 </details>
 
 **<details><summary>4️⃣ Performance testing</summary>**
