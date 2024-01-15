@@ -1,0 +1,683 @@
+{
+	"id": "35629bf9-f343-48bf-b650-0d2ee2d2d3b5",
+	"name": "Prada create account",
+	"timestamp": "2024-01-15T05:18:19.514Z",
+	"collection_id": "31243001-865c8f41-2cac-4c06-a53b-6b2bc9a8803a",
+	"folder_id": 0,
+	"environment_id": "31243001-4d6b372a-66dc-4102-8e93-3bdacb9282a5",
+	"totalPass": 188,
+	"delay": "100",
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-01-15T05:18:07.354Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "ece5cd65-edad-4cc0-8249-01144992027f",
+			"name": "Create account",
+			"url": "https://jsonblob.com/api/jsonBlob/",
+			"time": 195,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Response time is less than 500ms": true,
+				"Response Size is less than 5KB": true,
+				"Response Size is more than 1BT": true,
+				"Header is correct": true,
+				"response should be okay to process": true,
+				"Schema is valid": true,
+				"201 ok. The request has succeeded": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 500ms": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response Size is less than 5KB": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response Size is more than 1BT": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Header is correct": {
+					"pass": 4,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 4,
+					"fail": 0
+				},
+				"201 ok. The request has succeeded": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				198,
+				195,
+				380,
+				195
+			],
+			"allTests": [
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"201 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"201 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"201 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"201 ok. The request has succeeded": true
+				}
+			]
+		},
+		{
+			"id": "044c95e1-18bf-413e-b0e3-b3a9903e0971",
+			"name": "Retrieve account",
+			"url": "https://jsonblob.com/api/jsonBlob/1196322441726386176",
+			"time": 180,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response time is less than 500ms": true,
+				"Response Size is less than 5KB": true,
+				"Response Size is more than 1BT": true,
+				"Header is correct": true,
+				"response should be okay to process": true,
+				"Schema is valid": true,
+				"200 ok. The request has succeeded": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 500ms": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response Size is less than 5KB": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response Size is more than 1BT": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Header is correct": {
+					"pass": 4,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 4,
+					"fail": 0
+				},
+				"200 ok. The request has succeeded": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				186,
+				185,
+				191,
+				180
+			],
+			"allTests": [
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"200 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"200 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"200 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"200 ok. The request has succeeded": true
+				}
+			]
+		},
+		{
+			"id": "57c844f9-22d6-4aee-9c3a-0bc78968384c",
+			"name": "Edit address",
+			"url": "https://jsonblob.com/api/jsonBlob/1196322441726386176",
+			"time": 187,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response time is less than 500ms": true,
+				"Response Size is less than 5KB": true,
+				"Response Size is more than 1BT": true,
+				"Header is correct": true,
+				"response should be okay to process": true,
+				"Schema is valid": true,
+				"200 ok. The request has succeeded": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 500ms": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response Size is less than 5KB": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response Size is more than 1BT": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Header is correct": {
+					"pass": 4,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 4,
+					"fail": 0
+				},
+				"200 ok. The request has succeeded": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				183,
+				199,
+				205,
+				187
+			],
+			"allTests": [
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"200 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"200 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"200 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"200 ok. The request has succeeded": true
+				}
+			]
+		},
+		{
+			"id": "b078ff68-43ed-42ee-814f-cb147a1ff69d",
+			"name": "Retrieve account after chage",
+			"url": "https://jsonblob.com/api/jsonBlob/1196322441726386176",
+			"time": 189,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response time is less than 500ms": true,
+				"Response Size is less than 5KB": true,
+				"Response Size is more than 1BT": true,
+				"Header is correct": true,
+				"response should be okay to process": true,
+				"Schema is valid": true,
+				"200 ok. The request has succeeded": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 500ms": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response Size is less than 5KB": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response Size is more than 1BT": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Header is correct": {
+					"pass": 4,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Schema is valid": {
+					"pass": 4,
+					"fail": 0
+				},
+				"200 ok. The request has succeeded": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				186,
+				185,
+				181,
+				189
+			],
+			"allTests": [
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"200 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"200 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"200 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is more than 1BT": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"Schema is valid": true,
+					"200 ok. The request has succeeded": true
+				}
+			]
+		},
+		{
+			"id": "e546ed30-743b-47cc-acc9-62bf8e160057",
+			"name": "Delete account",
+			"url": "https://jsonblob.com/api/jsonBlob/1196322441726386176",
+			"time": 180,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response time is less than 500ms": true,
+				"Response Size is less than 5KB": true,
+				"Response Size is 0": true,
+				"Header is correct": true,
+				"response should be okay to process": true,
+				"200 ok. The request has succeeded": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 500ms": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response Size is less than 5KB": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response Size is 0": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Header is correct": {
+					"pass": 4,
+					"fail": 0
+				},
+				"response should be okay to process": {
+					"pass": 4,
+					"fail": 0
+				},
+				"200 ok. The request has succeeded": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				179,
+				198,
+				183,
+				180
+			],
+			"allTests": [
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is 0": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"200 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is 0": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"200 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is 0": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"200 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Response Size is 0": true,
+					"Header is correct": true,
+					"response should be okay to process": true,
+					"200 ok. The request has succeeded": true
+				}
+			]
+		},
+		{
+			"id": "1eb78b38-fef0-428c-bf85-f990dba1d847",
+			"name": "Delete deleted account",
+			"url": "https://jsonblob.com/api/jsonBlob/1196322441726386176",
+			"time": 183,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Response time is less than 500ms": true,
+				"Response Size is less than 5KB": true,
+				"Header is correct": true,
+				"404 ok. The request has succeeded": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 500ms": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response Size is less than 5KB": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Header is correct": {
+					"pass": 4,
+					"fail": 0
+				},
+				"404 ok. The request has succeeded": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				186,
+				180,
+				184,
+				183
+			],
+			"allTests": [
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Header is correct": true,
+					"404 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Header is correct": true,
+					"404 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Header is correct": true,
+					"404 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response Size is less than 5KB": true,
+					"Header is correct": true,
+					"404 ok. The request has succeeded": true
+				}
+			]
+		},
+		{
+			"id": "4c6571a4-8812-431f-a06c-066df589f092",
+			"name": "Confirm account was daleted",
+			"url": "https://jsonblob.com/api/jsonBlob/1196322441726386176",
+			"time": 180,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Response time is less than 500ms": true,
+				"Response should have a 'message' property": true,
+				"The 'message' property should be a string": true,
+				"Response should have a '_links' property": true,
+				"The '_links' property should be an object": true,
+				"The '_links' property should have a 'self' property": true,
+				"The 'self' property should be an object": true,
+				"The 'self' property should have 'href' and 'templated' properties": true,
+				"404 ok. The request has succeeded": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 500ms": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response should have a 'message' property": {
+					"pass": 4,
+					"fail": 0
+				},
+				"The 'message' property should be a string": {
+					"pass": 4,
+					"fail": 0
+				},
+				"Response should have a '_links' property": {
+					"pass": 4,
+					"fail": 0
+				},
+				"The '_links' property should be an object": {
+					"pass": 4,
+					"fail": 0
+				},
+				"The '_links' property should have a 'self' property": {
+					"pass": 4,
+					"fail": 0
+				},
+				"The 'self' property should be an object": {
+					"pass": 4,
+					"fail": 0
+				},
+				"The 'self' property should have 'href' and 'templated' properties": {
+					"pass": 4,
+					"fail": 0
+				},
+				"404 ok. The request has succeeded": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				185,
+				188,
+				179,
+				180
+			],
+			"allTests": [
+				{
+					"Response time is less than 500ms": true,
+					"Response should have a 'message' property": true,
+					"The 'message' property should be a string": true,
+					"Response should have a '_links' property": true,
+					"The '_links' property should be an object": true,
+					"The '_links' property should have a 'self' property": true,
+					"The 'self' property should be an object": true,
+					"The 'self' property should have 'href' and 'templated' properties": true,
+					"404 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response should have a 'message' property": true,
+					"The 'message' property should be a string": true,
+					"Response should have a '_links' property": true,
+					"The '_links' property should be an object": true,
+					"The '_links' property should have a 'self' property": true,
+					"The 'self' property should be an object": true,
+					"The 'self' property should have 'href' and 'templated' properties": true,
+					"404 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response should have a 'message' property": true,
+					"The 'message' property should be a string": true,
+					"Response should have a '_links' property": true,
+					"The '_links' property should be an object": true,
+					"The '_links' property should have a 'self' property": true,
+					"The 'self' property should be an object": true,
+					"The 'self' property should have 'href' and 'templated' properties": true,
+					"404 ok. The request has succeeded": true
+				},
+				{
+					"Response time is less than 500ms": true,
+					"Response should have a 'message' property": true,
+					"The 'message' property should be a string": true,
+					"Response should have a '_links' property": true,
+					"The '_links' property should be an object": true,
+					"The '_links' property should have a 'self' property": true,
+					"The 'self' property should be an object": true,
+					"The 'self' property should have 'href' and 'templated' properties": true,
+					"404 ok. The request has succeeded": true
+				}
+			]
+		}
+	],
+	"count": 4,
+	"totalTime": 5430,
+	"collection": {
+		"requests": [
+			{
+				"id": "ece5cd65-edad-4cc0-8249-01144992027f",
+				"method": "POST"
+			},
+			{
+				"id": "044c95e1-18bf-413e-b0e3-b3a9903e0971",
+				"method": "GET"
+			},
+			{
+				"id": "57c844f9-22d6-4aee-9c3a-0bc78968384c",
+				"method": "PUT"
+			},
+			{
+				"id": "b078ff68-43ed-42ee-814f-cb147a1ff69d",
+				"method": "GET"
+			},
+			{
+				"id": "e546ed30-743b-47cc-acc9-62bf8e160057",
+				"method": "DELETE"
+			},
+			{
+				"id": "1eb78b38-fef0-428c-bf85-f990dba1d847",
+				"method": "DELETE"
+			},
+			{
+				"id": "4c6571a4-8812-431f-a06c-066df589f092",
+				"method": "GET"
+			}
+		]
+	}
+}
