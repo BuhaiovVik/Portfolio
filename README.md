@@ -11,7 +11,7 @@
 Selenium WebDriver
  
 * Local Script
-  * [Unitest](https://github.com/BuhaiovVik/Portfolio/tree/main/2.%20Front-End%20testing/Selenium "Selenium python ")
+  * [Unittest](https://github.com/BuhaiovVik/Portfolio/tree/main/2.%20Front-End%20testing/Selenium "Selenium python ")
   * [Pytest](https://github.com/BuhaiovVik/Portfolio/tree/main/2.%20Front-End%20testing/Selenium/Pytest_Allure "Selenium python ")
 * Cloud Script
   * [BrowserStack](https://github.com/BuhaiovVik/Portfolio/tree/main/2.%20Front-End%20testing/Selenium/BrowserStack "Selenium python ")
