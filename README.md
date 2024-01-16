@@ -23,7 +23,7 @@ Selenium WebDriver
 
 **<details><summary>3️⃣ API testing</summary>**
 
-Postman API
+[Postman API](https://github.com/BuhaiovVik/Portfolio/tree/main/3.%20API%20testing "postman")
   * [Collection](https://github.com/BuhaiovVik/Portfolio/blob/main/3.%20API%20testing/Prada%20create%20account.postman_collection.json "collection")
   * [Environment](https://github.com/BuhaiovVik/Portfolio/blob/main/3.%20API%20testing/Prada_env.postman_environment.json "environment")
 </details>
